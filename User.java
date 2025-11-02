@@ -11,7 +11,15 @@ public class User {
     String get_name(){
         return _name;
     }
+    public User(){
 
+    }
+    public boolean equals(User u2){
+        if(u2.get_name()==get_name() && get_membership()==u2.get_membership()){
+            return true;
+        }
+        return false;
+    }
     public User(String name,Membership membership){
         set_name(name);
         set_membership(membership);
