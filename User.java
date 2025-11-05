@@ -1,3 +1,4 @@
+import java.util.*;
 public class User {
     private String _name;
     private String _memberShip;
@@ -8,8 +9,10 @@ public class User {
         _memberShip=memberShip.name();
 
     }
-    String get_name(){
-        return _name;
+    public static List<User> admins;
+    public User(String string,Membership membership){
+        set_name(string);
+        set_membership(membership);
     }
     public User(){
 
@@ -20,16 +23,14 @@ public class User {
         }
         return false;
     }
-    public User(String name,Membership membership){
-        set_name(name);
-        set_membership(membership);
-    }
     
+    String get_name(){
+        return _name;
+    }
     String get_membership(){
         return _memberShip;
     }
     public enum Membership{
         Bronze,Silver,Gold;
     }
-    
 }
